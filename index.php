@@ -10,12 +10,14 @@ $espagne = new Pays("Espagne");
 $bayern = new Club("Bayern Munich", "27-02-1900", $allemagne);
 $psg = new Club("Paris Saint-Germain", "12-08-1970", $france);
 $real = new Club("Real Madrid", "06-03-1902", $espagne);
+$om = new Club("Olympique de Marseille", "31-08-1899", $france);
 
 $ribery = new Joueur("Ribery", "Franck", "07-04-1983", $france);
 $zidane = new Joueur("Zinédine", "Zidane", "23-06-1972", $france);
 $ramos = new Joueur("Sergio", "Ramos", "30-03-1986", $espagne);
 
 $riberyBayern = new Contrat("2007", $bayern, $ribery);
+$riberyOm = new Contrat("2005", $om, $ribery);
 $zidaneReal = new Contrat("2001", $real, $zidane);
 $ramosReal = new Contrat("2005", $real, $ramos);
 $ramosPsg = new Contrat("2021", $psg, $ramos);
