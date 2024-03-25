@@ -94,23 +94,21 @@ class Joueur
 
     public function __toString()
     {
-        return "<p>" . $this->prenomJoueur . " " . $this->nomJoueur . "</p>";
+        return $this->prenomJoueur . " " . $this->nomJoueur;
     }
 
-
-    public function afficherClubs()
-    {
-        foreach ($this->contrats as $contrat) {
-            $result = "<p>" . $contrat->afficherClubs() . "</p>";
-        }
-
-        return $result;
-    }
 
     public function getInfos()
     {
-        return "<h2>" . $this . "<h2>
+        $result = "<h2>" . $this . "</h2>
                 <p>" . $this->pays . " - " . $this->getAge() . " ans</p>";
+        foreach ($this->contrats as $contrat) {
+            $result .= "<p>" . $contrat->afficherClubs() . "</p>";
+        }
+
+        $result .= "<br>";
+        return $result;
+
     }
 
 }

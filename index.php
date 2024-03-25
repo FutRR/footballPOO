@@ -12,8 +12,15 @@ $psg = new Club("Paris Saint-Germain", "12-08-1970", $france);
 $real = new Club("Real Madrid", "06-03-1902", $espagne);
 
 $ribery = new Joueur("Ribery", "Franck", "07-04-1983", $france);
+$zidane = new Joueur("Zinédine", "Zidane", "23-06-1972", $france);
+$ramos = new Joueur("Sergio", "Ramos", "30-03-1986", $espagne);
 
 $riberyBayern = new Contrat("2007", $bayern, $ribery);
+$zidaneReal = new Contrat("2001", $real, $zidane);
+$ramosReal = new Contrat("2005", $real, $ramos);
+$ramosPsg = new Contrat("2021", $psg, $ramos);
+
+
 ?>
 
 
@@ -43,24 +50,31 @@ $riberyBayern = new Contrat("2007", $bayern, $ribery);
 
     <div class="wrapper-club">
         <div class="card card-club">
-            <?= $bayern->getInfos();
-            echo $bayern->afficherJoueurs();
-            ?>
+            <?= $bayern->getInfos(); ?>
 
         </div>
         <div class="card card-club">
-            <?= $psg->getInfos() ?>
+            <?= $psg->getInfos(); ?>
 
         </div>
         <div class="card card-club">
-            <?= $real->getInfos() ?>
+            <?= $real->getInfos(); ?>
         </div>
     </div>
 
     <div class="wrapper-joueur">
-        <div class="card card-joueur"></div>
-        <div class="card card-joueur"></div>
-        <div class="card card-joueur"></div>
+        <div class="card card-joueur">
+            <?= $ribery->getInfos(); ?>
+
+        </div>
+        <div class="card card-joueur">
+            <?= $zidane->getInfos(); ?>
+
+        </div>
+        <div class="card card-joueur">
+            <?= $ramos->getInfos(); ?>
+
+        </div>
     </div>
 
 </body>

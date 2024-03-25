@@ -50,7 +50,7 @@ class Pays
     {
         $result = "<h2>" . $this . "</h2>";
         foreach ($this->clubs as $club) {
-            $result .= "" . $club . "<br>";
+            $result .= "<p>" . $club . "</p>";
         }
 
         $result .= "<br>";

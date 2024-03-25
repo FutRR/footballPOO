@@ -17,8 +17,8 @@ p{
 
 
 .card{
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: fit-content;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -30,12 +30,12 @@ p{
 
 .wrapper-pays{
     display: flex;
-
 }
 
 .card-pays{
     background-color: #9b3535;
 }
+
 
 .wrapper-club{
     display: flex;
@@ -43,4 +43,12 @@ p{
 
 .card-club{
     background-color: #35559b;
+}
+
+.wrapper-joueur{
+    display: flex;
+}
+
+.card-joueur{
+    background-color: #359b43;
 }

@@ -13,6 +13,8 @@ class Club
         $this->dateCreation = new DateTime($dateCreation);
         $this->contrats = [];
         $this->pays = $pays;
+        $this->pays->addClubs($this);
+
     }
 
     public function getNomClub(): string
@@ -71,23 +73,18 @@ class Club
 
     public function __toString()
     {
-        return "" . $this->nomClub . "<br>";
+        return $this->nomClub . "<br>";
     }
 
-    public function afficherJoueurs()
+    public function getInfos()
     {
-        $result = "";
+        $result = "<h2>" . $this . "</h2>
+                <p>" . $this->pays->getNomPays() . " - " . $this->dateCreation->format("Y") . "</p>";
         foreach ($this->contrats as $contrat) {
             $result .= "<p>" . $contrat->afficherJoueurs() . "</p>";
         }
 
         $result .= "<br>";
         return $result;
-    }
-
-    public function getInfos()
-    {
-        return "<h2>" . $this . "<h2>
-                <p>" . $this->pays->getNomPays() . " - " . $this->dateCreation->format("Y") . "</p>";
     }
 }
